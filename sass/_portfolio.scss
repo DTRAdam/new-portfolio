@@ -1,0 +1,194 @@
+.portfolio {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 1000px;
+    animation: showingtext 1s ease-in;
+    margin-bottom: 50px;
+
+}
+
+.skills {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    position: relative;
+    top: 120px;
+    animation: showsection 1.7s linear normal;
+
+
+
+}
+
+.skills>.biglogo {
+    width: 22%;
+    height: 52%;
+    position: relative;
+    top: 20px;
+    left: 230px;
+}
+
+.skillslogoimg {
+    background-color: rgba(255, 255, 255, 0);
+    width: 43%;
+    height: 65%;
+
+}
+
+.skillsheader {
+    position: relative;
+    top: 80px;
+    left: 190px;
+}
+
+.skillsheader h1 {
+    margin-bottom: 20px;
+    font-size: 4rem;
+}
+
+
+.skillsheader h3 {
+    margin-bottom: 20px;
+    font-size: 1.9rem;
+}
+
+.skillsheader p {
+    font-size: 1.3rem;
+    width: 940px;
+}
+
+.skillsheader>p>span {
+    color: #ff0000;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+
+.icons {
+    width: 300px;
+    height: 100px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    align-items: center;
+
+
+}
+
+.smlogo {
+    width: 40px;
+    height: 40px;
+
+}
+
+.aboutmebtn1 {
+    font-size: 1.3rem;
+    margin-top: 25px;
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+}
+
+.aboutmebtn1::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #1E2A38;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.aboutmebtn1::before {
+    content: "";
+    background: linear-gradient(310deg, rgb(255, 255, 255), #ff0000, rgb(255, 255, 255), #ff0000, rgb(255, 255, 255), #ff0000, rgb(255, 255, 255), #ff0000, );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 75s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 13px;
+    opacity: 0;
+}
+
+.aboutmebtn1:hover::before {
+    opacity: 1;
+}
+
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 300% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes showingtext {
+    0% {
+        filter: blur(35px);
+    }
+
+    25% {
+        filter: blur(25px);
+    }
+
+    50% {
+        filter: blur(15px);
+    }
+
+    75% {
+        filter: blur(5px);
+    }
+
+    100% {
+        filter: blur(0px);
+    }
+}
+
+@keyframes showsection {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+
+    25% {
+        top: 30px;
+        opacity: 0.25;
+    }
+
+    50% {
+        top: 60px;
+        opacity: 0.50;
+    }
+
+    75% {
+        top: 90px;
+        opacity: 0.75;
+    }
+
+    100% {
+        top: 120px;
+        opacity: 1;
+    }
+}

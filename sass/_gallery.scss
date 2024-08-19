@@ -1,0 +1,100 @@
+#gallery {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 350px;
+}
+
+.galleryheader span {
+    color: red;
+}
+
+.galleryheader {
+    margin-bottom: 250px;
+}
+
+.galleryheader h1 {
+    margin-bottom: 20px;
+    font-size: 4rem;
+
+}
+
+.galleryheader p {
+
+    font-size: 1.6rem;
+}
+
+.image-container {
+    margin: 0 auto;
+    width: 140px;
+    height: 140px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform 0.7s;
+}
+
+.image-container span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: rotateY(calc(var(--i) * 60deg)) translateZ(600px);
+    transition: all 0.9s ease-in-out;
+}
+
+.image-container span:hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: rotateY(calc(var(--i) * 60deg)) translateZ(750px);
+}
+
+.image-container span img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-radius: 8px;
+
+}
+
+.image-container .galleryImgSpan img {
+    top: 37px;
+}
+
+// .image-container span img:hover {
+
+//     transition: all 2.6s ease-in-out;
+// }
+
+.btn-container {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.btn {
+    position: absolute;
+    top: 150px;
+    background-color: #162645;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    filter: brightness(1.5);
+}
+
+#prev {
+    left: 20%;
+}
+
+#next {
+    right: 20%;
+}

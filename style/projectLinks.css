@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    height: 100%;
+    min-height: 100vh;
+    font-family: Montserrat;
+}
+
+.navdiv {
+    position: fixed;
+    background-color: #111111ba;
+    width: 100%;
+    z-index: 1;
+    height: 80px;
+    backdrop-filter: blur(2px);
+}
+
+.logo {
+    position: absolute;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    top: 9px;
+    right: 75px;
+}
+
+.logo+p {
+    color: #fff;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 26px;
+    right: 150px;
+}
+
+.hamburger {
+    position: fixed;
+    color: white;
+    top: 22.5px;
+    right: 2px;
+    width: 39px;
+    height: 30px;
+    font-size: 1.5rem;
+    display: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0 0 0 80px;
+    padding: 0;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    font-weight: bold;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 28px;
+    padding-right: 25px;
+    font-size: 1.2rem;
+}
+
+li a:hover {
+    color: red;
+    transition: all 0.3s ease-in-out;
+}
+
+.project-name {
+    background-image: url(/images/gamingsetup.jpg);
+    background-position: 0 -25px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 610px;
+}
+
+.project-name h1 {
+    font-size: 4.5rem;
+    font-weight: normal;
+    padding: 10px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.project-name p {
+    font-size: 2rem;
+    padding: 5px;
+    color: white;
+}
+
+
+.code-logo {
+    background-color: rgba(234, 234, 234, 0.953);
+    box-shadow: 5px 5px 5px rgba(131, 130, 130, 0.557);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130px;
+    width: 100%;
+    gap: 100px;
+}
+
+.code-logo img {
+    height: 65px;
+    width: 65px;
+
+}
+
+.project-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section img {
+    height: 718px;
+    box-shadow: 0px 0px 42px #000000;
+    margin-top: 112px;
+    margin-bottom: 112px;
+}
+
+.credit {
+    display: flex;
+    width: 100%;
+    height: 51px;
+    background-color: #000;
+    color: white;
+    text-align: center;
+    font-size: 1.3rem;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.preview-button {
+    font-size: 1rem;
+    margin-top: 25px;
+    margin-right: 14px;
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+}
+
+.preview-button::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.preview-button::before {
+    content: "";
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #ff00c8, #00bf7f, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 12px;
+    opacity: 0;
+}
+
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 300% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.preview-button:hover::before {
+    opacity: 1;
+}
+
+
+
+@media (max-width:768px) {
+
+    body {
+        font-family: montserrat;
+    }
+
+    .navdiv {
+        width: 100vw;
+        height: 6vh;
+    }
+
+    ul {
+        background-color: #111111ba;
+        list-style-type: none;
+        display: none;
+        margin-left: 0;
+
+    }
+
+    nav ul li {
+        border-bottom: 1px solid white;
+        float: none;
+    }
+
+    nav ul li a {
+        text-align: inherit;
+
+    }
+
+    .hamburger:hover+ul {
+        display: block;
+        margin-top: 6vh;
+
+    }
+
+    .hamburger {
+        display: block;
+        width: 95vw;
+        height: 8vh;
+        left: 3vw;
+        top: 0.9vh;
+    }
+
+    .logo {
+        right: 5vw;
+        width: 10vw;
+        height: 5vh;
+        top: 0.5vh;
+    }
+
+
+
+    .logo-div p {
+        right: 17vw;
+        top: 1.7vh;
+        font-size: 1rem;
+    }
+
+    .project-name {
+        background-image: url(/images/phonegamingsetup.jpg);
+        width: 100vw;
+        height: 35vh;
+        background-position: -5px 0px;
+        background-size: cover;
+    }
+
+    .project-name h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+        margin-top: 30px;
+
+    }
+
+    .project-name p {
+        font-size: 0.8rem;
+    }
+
+    .buttons {
+        display: flex;
+    }
+
+    .preview-button {
+        width: 40vw;
+        font-size: 0.9rem;
+        margin-top: 5px;
+        margin-right: 5px;
+        padding: 10px 10px;
+    }
+
+    .code-logo {
+        width: 100vw;
+        height: 8vh;
+        gap: 20vw;
+    }
+
+    .code-logo img {
+        height: 10vh;
+        width: 5vw;
+
+    }
+
+    .project-preview {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section img {
+        height: 30vh;
+        box-shadow: 0px 0px 42px #000000;
+        margin-top: 100px;
+        margin-bottom: 112px;
+        width: 95vw;
+    }
+
+    .credit {
+        font-size: 1rem;
+        width: 100vw;
+        height: 4vh;
+    }
+}
