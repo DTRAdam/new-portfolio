@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="sass/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
+    <title>Protfolio</title>
+    <link rel="stylesheet" href="./sass/main.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/fcd53155b7.js" crossorigin="anonymous"></script>
 </head>
@@ -15,14 +14,14 @@
     <header>
         <nav>
             <a href="#top" class="logo"></a>
-            <div class="hamburger">&#9776;</div>
-            <ul>
 
-                <li><a href="#top">Home</a></li>
-                <li><a href="#aboutme">About Me</a></li>
+            <ul id="ul" onclick="hamburger()">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="">About Me</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contactme">Contact</a></li>
             </ul>
+            <div onclick="hamburger()" class="hamburger">&#9776;</div>
         </nav>
     </header>
     <section class="portfolio">
@@ -43,8 +42,13 @@
                     <img class="smlogo" src="images/css3-alt-brands-solid.svg" alt="css_logo">
                 </div>
 
-                <a href="#aboutme"><button id="firstButton" class="aboutmebtn1">More about
-                        me</button></a>
+                <a href="#aboutme">
+                    <button class="learn-more">
+                        <span aria-hidden="true" class="circle">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">About me</span>
+                    </button></a>
             </div>
         </div>
 
@@ -58,9 +62,8 @@
             <div class="aboutmepdiv">
                 <img class="aboutmelogo" src="images/me.png" alt="Logo">
                 <div class="secondaboutmediv">
-                    <p>Hi, I’m Adam Kesenjenko, a Full Stack Development student at HackerU. I am passionate about both
-                        front-end and back-end
-                        development, aiming to create innovative and practical web solutions. My top priority is to
+                    <p>Hi, I’m Adam Kesenjenko, a Full Stack Developmer aiming to create innovative and practical web
+                        solutions. My top priority is to
                         develop visually appealing
                         and highly functional websites that offer an excellent user experience. This includes ensuring
                         ease of navigation and
@@ -95,7 +98,7 @@
                                     <div class="number">
                                         <img class="skillssmlogo" src="/images/bxl-typescript.svg"
                                             alt="typescript_logo">
-                                        <p class="skillP" id="skill2">0%</p>
+                                        <p class="skillP" id="skill2">75%</p>
                                     </div>
                                 </div>
                             </div>
@@ -199,7 +202,19 @@
 
             </div>
             <div>
-                <a href="/files/newresume.pdf"><button class="about-me-btn2">Downlaod The Qa</button></a>
+                <div style="display: flex; justify-content: center;align-items: center;">
+                    <a href="/files/newresume.pdf">
+                        <button class="Btn">
+                            <svg class="svgIcon" viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z">
+                                </path>
+                            </svg>
+                            <span class="icon2"></span>
+                            <span class="tooltip">Download Qa</span>
+                        </button>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -209,36 +224,24 @@
             <h1>Gallery</h1>
             <p>My art gallery: You might call me crazy, but I think that my art is better than <span
                     id="galleryspan"></span></p>
+            <br>
+            <div id="gallerySwitchBtn" onclick="toggleMode()" class="svg-wrapper">
+                <svg height="60" width="190" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="shape" height="60" width="190"></rect>
+                </svg>
+                <div class="text"></div>
+            </div>
         </div>
 
-        <div class="image-container">
-            <span>
-                <img src="images/newLogo.webp" />
-            </span>
-            <span class="galleryImgSpan" style="--i: 1">
-                <a href="/pages/caseGalleryDisplayLink.html"><img src="images/caseDisplayImg.png" /></a>
-            </span>
-            <span class="galleryImgSpan" style="--i: 2">
-                <a href=""><img src="images/discoverTheWorldImg.png" /></a>
-            </span>
-            <span class="galleryImgSpan" style="--i: 3">
-                <a href=""><img src="images/globalCities.png" /></a>
-            </span>
-            <span class="galleryImgSpan" style="--i: 4">
-                <a href=""><img src="images/greatCoffeeImg.png" /></a>
-            </span>
-            <span class="galleryImgSpan" style="--i: 5">
-                <a href=""><img src="images/hereAndNowImg.png" /></a>
-            </span>
-            <span class="galleryImgSpan" style="--i: 6">
-                <a href=""><img src="images/leadYouForwardImg.png" /></a>
-            </span>
+        <div class="image-container" id="image-container">
+
         </div>
         <div class="btn-container">
             <button class="btn" id="prev">Prev</button>
             <button class="btn" id="next">Next</button>
         </div>
     </section>
+
 
     <section data-aos="fade-right" data-aos-duration="1650" id="contactme">
 
@@ -280,8 +283,11 @@
                 <div class="phonenumber">
                     <h3>Contact Details:</h3>
                     <hr class="contactdetailshr">
-                    <p>+972549189923</p>
+                    <p>+97254-918-9923</p>
                     <p>adamDevelopment@gmail.com</p>
+                    <div id="time">
+                        <p></p>
+                    </div>
                 </div>
                 <div>
                     <h3>Socials</h3>
@@ -292,7 +298,7 @@
                         <a href="https://www.linkedin.com/in/adam-kesenjenko-49b320313/"><button><i
                                     class="fa-brands fa-linkedin-in "></i></button></a>
                         <a href="https://github.com/DTRAdam"><button><i class="fa-brands fa-github"></i></button></a>
-                        <a href=""><button><i class="fa-brands fa-whatsapp "></i></button></a>
+                        <a href="https://web.whatsapp.com/"><button><i class="fa-brands fa-whatsapp "></i></button></a>
                         <a href=""><button><i class="fa-brands fa-x-twitter "></i></button></a>
                     </div>
                 </div>
@@ -300,10 +306,11 @@
         </div>
 
     </section>
+
 </body>
-<script src="scripts/gallery.js"></script>
+<script src="./scripts/gallery.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script defer src="scripts/skillsCircle.js"></script>
-<script src="scripts/textAnimation.js"></script>
+<script defer src="./scripts/skillsCircle.js"></script>
+<script src="./scripts/textAnimation.js"></script>
 
 </html>

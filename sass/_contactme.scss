@@ -26,6 +26,7 @@ input {
     color: white;
     font-size: 1.2rem;
     padding-left: 10px;
+    margin-bottom: 5px;
 
 }
 
@@ -69,7 +70,7 @@ aside {
 
 .contactdetailshr {
     border: none;
-    border-top: 2px solid rgb(255, 0, 0);
+    border-top: 2px solid #ea4424;
 }
 
 .contactmehead {
@@ -84,7 +85,7 @@ aside {
 .imgdiv {
     margin-bottom: 50px;
     margin-left: 25px;
-    background-image: url(/images/me.png);
+    background-image: url(../images/me.png);
     width: 145px;
     height: 145px;
     background-repeat: no-repeat;
@@ -119,14 +120,14 @@ aside p {
 }
 
 .contactmeicon i {
-    font-size: 1.7rem;
+    font-size: 1.9rem;
     background-color: transparent;
     color: white;
     transition: all 0.3s ease-in-out;
 }
 
 .contactmeicon i:hover {
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
 
 .contactmeicon button {
@@ -137,4 +138,24 @@ aside p {
 
 .phonenumber p {
     padding-top: 6px;
+}
+
+#time {
+    margin-top: 8px;
+}
+
+.timespan {
+    font-weight: bold;
+}
+
+input:focus {
+    border-radius: 5px;
+}
+
+textarea:focus {
+    border-radius: 5px;
+}
+
+.phonenumber {
+    font-size: 1.2rem;
 }
